@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classes>
+	<!-- <package name="demo.ddl"> <class name="Demo" comment="测试" /> </package> -->
+	<package name="moudles.member.ddl">
+		<class name="MemberLogDDL" comment="" />
+		<class name="MemberDDL" comment="" />
+		<class name="MemberSessionDDL" comment="" />
+	</package>
+	<package name="moudles.order.ddl">
+		<class name="ZhifuOrderDDL" comment="" />
+		<class name="GameOrderDDL" comment="" />
+	</package>
+	<package name="moudles.news.ddl">
+		<class name="NewsDDL" comment="" />
+	</package>
+	<package name="moudles.award.ddl">
+		<class name="AwardDDL" comment="" />
+		<class name="AwardRecordDDL" comment="" />
+		<class name="AwardAssignDDL" comment="" />
+		<class name="AwardRecordDollDDL" comment="" />
+		<class name="AwardDetailDDL" comment="" />
+	</package>
+	<package name="moudles.activity.ddl">
+		<class name="RechargePresentedActivityDDL" comment="" />
+		<class name="RechargePresentedRuleDDL" comment="" />
+	</package>
+	<package name="moudles.game.ddl">
+		<class name="GamesDDL" comment="" />
+	</package>
+	<package name="moudles.game.ddl">
+		<class name="GameMemberDDL" comment="" />
+		<class name="CouponGameDDL" comment="" />
+	</package>
+	<package name="moudles.chance.ddl">
+		<class name="ChanceDDL" comment="" />
+		<class name="DollChanceConfigDDL" comment="" />
+		<class name="DollChanceRecordDDL" comment="" />
+	</package>
+	<package name="moudles.exchage.ddl">
+		<class name="GameCoinExchangeDDL" comment="" />
+	</package>
+	<package name="moudles.blacklist.ddl">
+		<class name="BlacklistDDL" comment="" />
+	</package>
+	<package name="moudles.rank.ddl">
+		<class name="RankDDL" comment="" />
+	</package>
+	<package name="moudles.capital.ddl">
+		<class name="CapitalPoolDDL" comment="" />
+	</package>
+	<package name="moudles.jackpot.ddl">
+		<class name="JackpotDDL" comment="" />
+	</package>
+	<package name="moudles.odds.ddl">
+		<class name="OddsDDL" comment="" />
+	</package>
+	<package name="moudles.guess.ddl">
+		<class name="GuessAwardDDL" comment="" />
+		<class name="GuessBoobyRecordDDL" comment="" />
+		<class name="GuessRecordDDL" comment="" />
+		<class name="GuessSeasonDDL" comment="" />
+		<class name="GuessSeasonCurrentDDL" comment="" />
+		<class name="GuessRecordTempDDL" comment="" />
+	</package>
+	<package name="moudles.robot.ddl">
+		<class name="RobotInfoDDL" comment="" />
+	</package>
+	<package name="moudles.gae.ddl">
+		<class name="GaeRoomDDL" comment="" />
+		<class name="GaeDrawTempDDL" comment="" />
+		<class name="GaeDrawDDL" comment="" />
+		<class name="GaeDrawRecordDDL" comment="" />
+		<class name="GaeDrawRecordTempDDL" comment="" />
+		<class name="GaePrizeTopDDL" comment="" />
+		<class name="GaeUserPlDDL" comment="" />
+		<class name="GaeRobotActiveDDL" comment="" />
+		<class name="GaeRobotInfoDDL" comment="" />
+		<class name="GaeRobotSettDDL" comment="" />
+		<class name="GaeDrawOrderDDL" comment="" />
+	</package>
+	<package name="moudles.task.ddl">
+		<class name="GameTaskDDL" />
+		<class name="GameTaskRecordDDL" />
+	</package>
+</classes>

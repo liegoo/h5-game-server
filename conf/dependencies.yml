@@ -1,0 +1,27 @@
+# Application dependencies
+require:
+    - jws
+    - jws.module.ucgc -> h5-game-api 3.4.0-SNAPSHOT
+    - jws.module.ucgc -> statistics-client 2.3-SNAPSHOT
+    - jws.module.ucgc -> ucgc-common 1.1-SNAPSHOT
+    - cn.jugame -> account_center_api 1.7.0:
+        transitive: false
+    - cn.jugame -> service-common 1.0.4:
+        transitive: false
+#    - cn.jugame -> dictionary_api 1.0.2
+#    - io.netty -> netty 3.7.0.Final
+#    - jline -> jline 2.12
+#    - com.alibaba -> dubbo 2.5.3:
+#        transitive: false
+#    - org.apache.zookeeper -> zookeeper 3.4.7
+#    - com.101tec -> zkclient 0.4
+    - provided -> jfinal 2.2
+    - provided -> druid 1.0.13
+
+repositories:
+  - provided:
+      type:       local
+      descriptor: "${application.path}/../[module]/conf/dependencies.yml"
+      artifact:   "${application.path}/libs/[module]-[revision].jar"
+      contains:
+        - provided -> *

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--           
+    shard-type:  分库类型
+    range: 范围分库
+    hash :  取模分库
+    hash-str : string取模分库（用户中心取模算法）
+    shard-column: 分库字段
+-->
+<configs> 
+  <!--
+        <config class="demo.ddl.Demo" source="mysql" shard-type="hash"
+            shard-column="id" comment="测试">
+            <map client="vdb_01">0</map>
+            <map client="vdb_02">1</map>
+        </config>
+        -->  
+  <!--
+        <config class="demo.ddl.Demo" source="mysql" shard-type="none"
+            comment="测试-不分库场景">
+            <map client="vdb_01">0</map>
+        </config>
+
+        <config class="demo.ddl.Demo" source="mysql" shard-type="range"
+            shard-column="id" comment="测试-按范围分库">
+            <map client="vdb_01">0-100</map>
+            <map client="vdb_02">100-9223372036854775807</map>
+        </config>
+
+        <config class="demo.ddl.Demo" source="mysql" shard-type="range"
+            shard-column="id" comment="测试-按范围分库">
+            <map client="vdb_01">0-100</map>
+            <map client="vdb_02">100-9223372036854775807</map>
+        </config>
+
+        <config class="demo.ddl.Demo" source="mysql" shard-type="hash-string"
+            shard-column="t_name" substring="0,16" comment="测试-对字符串，按hash-string分库">
+            <map client="vdb_01">0</map>
+            <map client="vdb_02">1</map>
+        </config>
+
+        <config class="demo.ddl.Demo" source="mysql" shard-type="range-hash"
+            shard-column="id" comment="测试-hash+rang分库">
+            <range map="0-10000000" >
+                <map client="vdb_01">0</map>
+                <map client="vdb_02">1</map>
+            </range>
+            <range map="10000001-9223372036854775807" >
+                <map client="vdb_01">0</map>
+                <map client="vdb_02">1</map>
+            </range>
+        </config>
+        -->  
+  <config shard-type="none" source="mysql" class="moudles.member.ddl.MemberLogDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.member.ddl.MemberDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.member.ddl.MemberSessionDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.order.ddl.ZhifuOrderDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.order.ddl.GameOrderDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>    
+  <config shard-type="none" source="mysql" class="moudles.news.ddl.NewsDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.award.ddl.AwardDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.award.ddl.AwardRecordDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.activity.ddl.RechargePresentedActivityDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.activity.ddl.RechargePresentedRuleDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.game.ddl.GamesDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.order.ddl.ZhifuOrderDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.game.ddl.GameMemberDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.game.ddl.CouponGameDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.award.ddl.AwardAssignDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.chance.ddl.ChanceDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.chance.ddl.DollChanceRecordDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.chance.ddl.DollChanceConfigDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.award.ddl.AwardRecordDollDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.exchage.ddl.GameCoinExchangeDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.blacklist.ddl.BlacklistDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.award.ddl.AwardDetailDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.rank.ddl.RankDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.capital.ddl.CapitalPoolDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.jackpot.ddl.JackpotDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.odds.ddl.OddsDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessAwardDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessBoobyRecordDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessRecordDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessSeasonDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessSeasonCurrentDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.robot.ddl.RobotInfoDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.guess.ddl.GuessRecordTempDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeRoomDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeDrawTempDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeDrawDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeDrawRecordDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeDrawRecordTempDDL" comment=""> 
+    <map client="dbbase"/> 
+  </config>  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaePrizeTopDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeUserPlDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeRobotActiveDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeRobotInfoDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeRobotSettDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.gae.ddl.GaeDrawOrderDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.task.ddl.GameTaskDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+  <config shard-type="none" source="mysql" class="moudles.task.ddl.GameTaskRecordDDL" comment="">
+    <map client="dbbase"/>
+  </config>
+</configs>

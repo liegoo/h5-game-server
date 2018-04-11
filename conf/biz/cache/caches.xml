@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config> 
+  <!-- Row缓存: 只支持通过主键获取数据的情况 prefix: 缓存前缀 enabled: 开关 -->  
+  <row-cache> 
+    <!--
+        <cache class="demo.ddl.Demo" prefix="demo_r_"  enabled="true"  comment=""/>
+        -->  
+    <cache enabled="true" prefix="MemberDDL_v1" class="moudles.member.ddl.MemberDDL" comment=""/>  
+    <cache enabled="true" prefix="MemberLogDDL_v1" class="moudles.member.ddl.MemberLogDDL" comment=""/>  
+    <cache enabled="true" prefix="MemberSessionDDL_v1" class="moudles.member.ddl.MemberSessionDDL" comment=""/>  
+    <cache enabled="true" prefix="ZhifuOrderDDL_v1" class="moudles.order.ddl.ZhifuOrderDDL" comment=""/>  
+    <cache enabled="true" prefix="NewsDDL_v1" class="moudles.news.ddl.NewsDDL" comment=""/>  
+    <cache enabled="true" prefix="AwardDDL_v1" class="moudles.award.ddl.AwardDDL" comment=""/>  
+    <cache enabled="true" prefix="AwardRecordDDL_v1" class="moudles.award.ddl.AwardRecordDDL" comment=""/>  
+    <cache enabled="true" prefix="RechargePresentedActivityDDL_v1" class="moudles.activity.ddl.RechargePresentedActivityDDL" comment=""/>  
+    <cache enabled="true" prefix="RechargePresentedRuleDDL_v1" class="moudles.activity.ddl.RechargePresentedRuleDDL" comment=""/>  
+    <cache enabled="true" prefix="GamesDDL_v1" class="moudles.game.ddl.GamesDDL" comment=""/>  
+    <cache enabled="true" prefix="GamesMemberDDL_v1" class="moudles.game.ddl.GameMemberDDL" comment=""/>  
+    <cache enabled="true" prefix="GameMemberDDL_v1" class="moudles.game.ddl.GameMemberDDL" comment=""/>  
+    <cache enabled="true" prefix="GameCoinExchangeDDL_v1" class="moudles.exchage.ddl.GameCoinExchangeDDL" comment=""/>  
+    <cache enabled="true" prefix="GaeRoomDDL_v1" class="moudles.gae.ddl.GaeRoomDDL" comment=""/>  
+    <cache enabled="true" prefix="GaeDrawTempDDL_v1" class="moudles.gae.ddl.GaeDrawTempDDL" comment=""/>  
+    <cache enabled="true" prefix="GaeDrawDDL_v1" class="moudles.gae.ddl.GaeDrawDDL" comment=""/>  
+    <cache enabled="true" prefix="GaeDrawRecordDDL_v1" class="moudles.gae.ddl.GaeDrawRecordDDL" comment=""/>  
+    <cache enabled="true" prefix="GaeDrawRecordTempDDL_v1" class="moudles.gae.ddl.GaeDrawRecordTempDDL" comment=""/>  
+    <cache enabled="true" prefix="GaePrizeTopDDL_v1" class="moudles.gae.ddl.GaePrizeTopDDL" comment=""/>
+    <cache enabled="true" prefix="GaeUserPlDDL_v1" class="moudles.gae.ddl.GaeUserPlDDL" comment=""/>
+    
+    <cache enabled="true" prefix="GaeUserPlDDL_v1" class="moudles.gae.ddl.GaeRobotActiveDDL" comment=""/>
+    <cache enabled="true" prefix="GaeUserPlDDL_v1" class="moudles.gae.ddl.GaeRobotInfoDDL" comment=""/>
+    <cache enabled="true" prefix="GaeUserPlDDL_v1" class="moudles.gae.ddl.GaeRobotSettDDL" comment=""/>
+  </row-cache>  
+  <!-- List缓存: 基于sql语句的缓
+              sql : sql语句
+              key : 缓存key的唯一标示
+              params : sql语句参数 
+              cache-item : 缓存的列，越少越好
+              offset : 缓存区域下限
+              count : 缓存区域大小
+      -->  
+  <list-cache> 
+    <!--
+        <cache name="demo_list" class="demo.ddl.Demo" prefix="demo_l_" enabled ="true"  comment ="">
+            <sql>select id from demo where t_name=?</sql>
+            <key>id</key>
+            <params>t_name</params>
+            <cache-item>id</cache-item>
+            <offset>0</offset>
+            <count>10</count>
+        </cache>
+        --> 
+  </list-cache> 
+</config>

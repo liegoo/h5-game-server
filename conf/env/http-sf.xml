@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<httpclient.sf>
+    <root>
+        <!--
+        failNumber:某个接口连续超时该次数后，对接口降级处理，标识为不可用；
+        failRate :某个接口最近count数量的请求，失败率到达了50%，对接口降级处理，标识为不可用；
+        failedCheckNumberLimit:某个接口标识为不可用后，累计访问了当前次数，必须检测一次接口可用性健康检测；
+        failedCheckTimeLimit:某个接口标识为不可用后，超过了该时间范围后，必须检测一次接口可用性健康检测；
+        -->
+        <failNumber>10</failNumber>
+        <failRate count="10">50%</failRate>
+        <failedCheckNumberLimit>100</failedCheckNumberLimit>
+        <failedCheckTimeLimit>30s</failedCheckTimeLimit>
+    </root>
+    <!--配置具体的服务接口（支持宏替换）
+        name：服务名，请确保统一应用该配置值唯一
+        address：服务器对应的地址（无需带协议头，例如：account.9game.cn:9020）
+        secure：是否使用https协议，true/false，默认false
+                    代码示例：
+                    需要引入：jws.http.sf.HTTP
+        Request req = new Request("pf", "search", "");
+        Response resp = HTTP.GET(req);  
+     -->
+     <service name ="wdjService" address="${wdj.server.url}" comment="豌豆夹绑定接口" secure="true">
+        <api name="accountBinding" path="/cps/account/binding" timeout="10s"/>
+    </service>
+     <service name ="accountCenter" address="${account.center.server.url}" comment="用户中心接口" secure="false">
+         <api name="login" path="/account/login" timeout="10s"/>
+         <api name="loginByDynamicDigital" path="/account/loginByDynamicDigital" timeout="10s"/>
+         <api name="checkLoginByToken" path="/account/checkLoginByToken" timeout="10s"/>
+         <api name="refreshLogin" path="/account/checkTokenAndProlongExpiredTime" timeout="10s"/>
+         <api name="checkMoible" path="/account/checkUserExistByMobile" timeout="10s"/>
+         <api name="checkUid" path="/account/checkUserExist" timeout="10s"/>
+         <api name="bindMobile" path="/account/bindMobile" timeout="10s"/>
+         <api name="checkUserExistByMobile" path="/account/checkUserExistByMobile" timeout="10s"/>
+         <api name="logout" path="/account/logout" timeout="10s"/>
+         <api name="updateMemberInfo" path="/account/updateMemberInfo" timeout="5s"/>
+         <api name="queryWxInfoByUid" path="/account/queryWxInfoByUid" timeout="5s"/>
+         <api name="getUserInfoByUid" path="/account/getUserInfo" timeout="5s"/>
+     </service>
+     <service name ="cardPayService" address="${cardPayService.addr}" comment="sdk支付接口" secure="false">
+        <api name="cardPay" path="/api_json" timeout="10s"/>
+    </service>
+    <service name ="payCenterService" address="${pay.center.service.url}" comment="支付中心接口" secure="false">
+        <api name="payCallback" path="/callback/h5game_center_callback" timeout="10s"/>
+        <api name="orderRefund" path="/api/orderRefund" timeout="10s"/>
+    </service>
+    <service name ="ipService" address="${ip.query.server.url}" comment="ip查询接口" secure="false">
+        <api name="query" path="/service/getIpInfo.php" timeout="10s"/>
+    </service>
+     <service name ="dicionaryService" address="${dicionary.service.server.url}" comment="字典服务接口" secure="false">
+         <api name="getQuestionGroup" path="/dicionary/getDictionaryListByGroupcode" timeout="10s"/>
+     </service>
+     <service name ="wechatService" address="${webchat.service.server.url}" comment="微信授权服务接口" secure="false">
+         <api name="getWeChatUserInfo" path="/api" timeout="10s"/>
+         <api name="sendTemplateMessage" path="/api" timeout="10s"/>
+     </service>
+     <service name ="gameProductService" address="${account.center.server.url}" comment="游戏商品服务接口" secure="false">
+         <api name="getGames" path="/game/getGamesByChannelIdchannelId" timeout="30s"/>
+         <api name="applyCoupon" path="/coupon/apply" timeout="30s"/>
+         <api name="auditCoupon" path="/coupon/audit" timeout="30s"/>
+         <api name="resellCoupon" path="/coupon/resell/publishSource/sellerIP" timeout="30s"/>
+         <api name="activiteCoupon" path="/coupon/activite" timeout="30s"/>
+     </service>
+</httpclient.sf>
